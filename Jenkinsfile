@@ -5,9 +5,15 @@ pipeline {
         }
     agent any
     stages {
+        stage('Checkout') {
+            steps {
+                // Checkout mã nguồn từ GitHub
+                git branch: 'main', url: 'https://github.com/vuducchinh/security-devops.git'
+            }
+        }
         stage('Clone Repository') {
             steps {
-                git 'https://gitlab.com/groupproject2023/udacity_project4.git'
+                git 'https://github.com/vuducchinh/security-devops.git'
             }
         }
         stage('Build') {

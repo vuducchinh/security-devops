@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://gitlab.com/groupproject2023/udacity_project4.git'
+                git 'https://github.com/vuducchinh/security-devops.git'
             }
         }
         stage('Build') {

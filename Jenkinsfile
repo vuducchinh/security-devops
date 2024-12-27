@@ -7,7 +7,8 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout mã nguồn từ GitHub
-                git branch: 'main', url: 'https://github.com/vuducchinh/security-devops.git'
+                sh 'git fetch --all'
+                sh 'git checkout main'
             }
         }
         stage('Clone Repository') {

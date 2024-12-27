@@ -1,7 +1,7 @@
 pipeline {
-    environment {
-        // Định nghĩa các biến môi trường nếu cần
-    }
+    // environment {
+       
+    // }
     agent any
     stages {
         stage('Checkout') {

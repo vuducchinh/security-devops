@@ -1,8 +1,7 @@
 pipeline {
     environment {
-        registry = "gustavoapolinario/docker-test"
-        registryCredential = ‘dockerhub’
-        }
+        // Định nghĩa các biến môi trường nếu cần
+    }
     agent any
     stages {
         stage('Checkout') {
@@ -41,10 +40,13 @@ pipeline {
                 '''
             }
         }
-        stage('Remove Unused docker image') {
-          steps{
-            sh "docker rmi $registry:latest
-          }
+    }
+    post {
+        success {
+            echo 'Pipeline succeeded!'
+        }
+        failure {
+            echo 'Pipeline failed.'
         }
     }
 }
